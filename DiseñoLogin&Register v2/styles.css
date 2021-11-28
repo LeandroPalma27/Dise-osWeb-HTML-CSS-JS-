@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
+
+* {
+    box-sizing: border-box;
+    font-family: 'Dongle', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 5%, rgba(10, 126, 53, 1) 100%);
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+.principal {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-form {
+    width: 26%;
+    height: 60%;
+    background: rgba(61, 61, 61, 0.199);
+    border-radius: 10px;
+    box-shadow: 9px 10px 24px 7px rgba(0, 0, 0, 0.62);
+    -webkit-box-shadow: 9px 10px 24px 7px rgba(0, 0, 0, 0.62);
+    -moz-box-shadow: 9px 10px 24px 7px rgba(0, 0, 0, 0.62);
+}
+
+.form_login {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    font-size: 50px;
+    color: white;
+    position: relative;
+    top: 0;
+    opacity: 1;
+    transition: all 0.6s;
+}
+
+.form_login.active {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    font-size: 50px;
+    color: white;
+    position: relative;
+    top: 200%;
+    opacity: 0;
+}
+
+.form_register {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    position: relative;
+    font-size: 50px;
+    color: white;
+    opacity: 0;
+    bottom: -200%;
+    transition: all 0.6s;
+}
+
+.form_register.active {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    position: relative;
+    font-size: 50px;
+    color: white;
+    opacity: 1;
+    bottom: 100%;
+    transition: all 0.6s;
+}
+
+/* Botones para el cambio de login o registro: */
+
+.register-button, .login-button {
+    font-size: 25px;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 500px) {
+    .container-form {
+        width: 75%;
+        height: 60%;
+        background: rgba(61, 61, 61, 0.199);
+        border-radius: 10px;
+        box-shadow: 9px 10px 24px 7px rgba(0, 0, 0, 0.62);
+        -webkit-box-shadow: 9px 10px 24px 7px rgba(0, 0, 0, 0.62);
+        -moz-box-shadow: 9px 10px 24px 7px rgba(0, 0, 0, 0.62);
+    }
+}
