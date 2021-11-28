@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Importamos los iconos de Boxicons CDN -->
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="../css/styles.css" type="text/css">
+    <script src="../js/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script src="../js/effects.js" type="text/javascript"></script>
+    <title>Sidebar Lateral 1</title>
+</head>
+
+<body>
+    <!-- Estructura del sidebar lateral -->
+    <div class="sidebar">
+        <!-- Contenedor del logo -->
+        <div class="logo_content">
+            <div class="logo">
+                <!-- De esta manera se llama a cada icono -->
+                <i class='bx bxl-javascript' id="iconLogo"></i>
+                <div class="logo_name" id="nameLogo">LeanCode</div>
+            </div>
+            <i class='bx bx-menu' id="btnMenu"></i>
+        </div>
+        <ul class="nav_list">
+            <li>
+                <i class='bx bx-search-alt-2' id="btnBuscar"></i>
+                <input type="text" placeholder="Buscar" id="inputBuscar">
+                <span class="tooltip">Buscar</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-grid-alt'></i>
+                    <span class="links_name">Dashboard</span>
+                </a>
+                <span class="tooltip">Dashboard</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-user'></i>
+                    <span class="links_name">Usuarios</span>
+                </a>
+                <span class="tooltip">Usuarios</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-chat'></i>
+                    <span class="links_name">Mensajes</span>
+                </a>
+                <span class="tooltip">Mensajes</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-pie-chart-alt-2'></i>
+                    <span class="links_name">Analytics</span>
+                </a>
+                <span class="tooltip">Analytics</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-folder'></i>
+                    <span class="links_name">Archivos</span>
+                </a>
+                <span class="tooltip">Archivos</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cart-alt'></i>
+                    <span class="links_name">Orden</span>
+                </a>
+                <span class="tooltip">Orden</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-heart'></i>
+                    <span class="links_name">Deseado</span>
+                </a>
+                <span class="tooltip">Deseado</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-cog'></i>
+                    <span class="links_name">Configuracion</span>
+                </a>
+                <span class="tooltip">Configuracion</span>
+            </li>
+        </ul>
+    </div>
+    <div class="home_content">
+        <div class="text">Bienvenido</div>
+    </div>
+</body>
+
+</html>

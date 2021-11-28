@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/styles-register.css" type="text/css">
+    <script src="../js/effects.js" type="text/javascript"></script>
+    <title>Register</title>
+</head>
+
+<body>
+    <div class="contenedor_global">
+        <div class="contenedor_form">
+            <form action="">
+                <div class="contenedor_titulo">Registrarse</div>
+                <div class="contenedor_inputs">
+                    <div class="contenedor_inputText">
+                        <input type="text" class="input_user" placeholder="Nombre de usuario">
+                    </div>
+                    <div class="contenedor_inputText">
+                        <input type="text" class="input_user" placeholder="Nombres">
+                    </div>
+                    <div class="contenedor_inputText">
+                        <input type="text" class="input_user" placeholder="Apellidos">
+                    </div>
+                    <div class="contenedor_inputText">
+                        <input type="email" class="input_user" placeholder="Email">
+                    </div>
+                    <div class="contenedor_inputPass">
+                        <input type="password" class="input_pass" placeholder="Contraseña" id="inputPassword">
+                        <span class="eye" onclick="showPassword()">
+                            <i class="eye-button-close" id="open"></i>
+                            <i class="eye-button-open" id="close"></i>
+                        </span>
+                    </div>
+                </div>
+                <div class="contenedor_botones">
+                    <div class="contenedor_regisAndLog">
+                        <div class="content_btnRegister">
+                            <button type="submit" id="btnCreate">Crear cuenta</button>
+                        </div>
+                        <div class="separador"></div>
+                        <div class="content_btnToLogin">
+                            <button type="submit" id="btnToLogin">Tengo una cuenta</button>
+                        </div>
+                    </div>
+                    <div class="contenedor_socialAccounts">
+                        <div class="text_infoSocials">Regístrate con:</div>
+                        <div class="buttons_infoSocials">
+                            <div class="iconFacebook">
+                                <i class='bx bxl-facebook-circle'></i>
+                            </div>
+                            <div class="separador" id="separadorSocial"></div>
+                            <div class="iconGoogle">
+                                <i class='bx bxl-google'></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

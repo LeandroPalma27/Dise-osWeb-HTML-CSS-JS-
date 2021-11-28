@@ -1,0 +1,274 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    position: relative;
+    /* Podrian ser cuestiones responsive */
+    min-height: 100vh;
+    width: 100%;
+    background-color: rgb(225, 225, 225);
+}
+
+/* Estilos para clase */
+
+.sidebar {
+    /* Ocupa el 100% del contenedor padre (body en este caso) */
+    /* Al ser fixed (absolute), pasa a ocupar el tamaño del contenedor padre (en este caso body), que seria del 100%. */
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 78px;
+    background-color: rgb(41, 41, 41);
+    padding: 6px 14px;
+    transition: all 0.5s ease;
+    /* Como es los contenedores de cada opcion son flex, se adapta al cambio de tamaño. */
+}
+
+/* Esto se representa como class="sidebar active" en html.  */
+
+.sidebar.active {
+    width: 240px;
+}
+
+.sidebar .logo_content .logo {
+    color: rgb(235, 235, 235);
+    display: flex;
+    height: 50px;
+    width: auto;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active .logo_content .logo {
+    /* Mientras que el sidebar principal este activo, la clase logo tomara estos valores: */
+    opacity: 1;
+}
+
+.logo_content .logo i {
+    font-size: 22px;
+    font-weight: bold;
+    width: 24px;
+    height: 50px;
+    margin-right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo_content .logo .logo_name {
+    font-size: 18px;
+    margin-left: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sidebar #btnMenu {
+    position: absolute;
+    left: 50%;
+    top: 6.5px;
+    font-size: 20px;
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    line-height: 50px;
+    transform: translateX(-50%);
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active #btnMenu {
+    left: 90%;
+}
+
+.sidebar ul {
+    margin-top: 15px;
+}
+
+.sidebar ul li {
+    position: relative;
+    height: 50px;
+    margin: 0 2px;
+    display: flex;
+    line-height: 50px;
+    align-items: center;
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+}
+
+.sidebar ul li .tooltip {
+    position: absolute;
+    color: rgb(41, 41, 41);
+    height: 35px;
+    width: 130px;
+    left: 70px;
+    top: 0;
+    transform: translateY(-50%);
+    border-radius: 8px;
+    background-color: #fff;
+    line-height: 35px;
+    text-align: center;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transition: 0s;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.sidebar.active ul li .tooltip {
+    display: none;
+}
+
+.sidebar ul li:hover .tooltip {
+    /* Se cambian las propiedades de "tooltip" siempre y cuando se pase por encima el mouse en cada elemento de la lista. */
+    transition: all 0.5s ease;
+    opacity: 1;
+    top: 50%;
+}
+
+.sidebar ul li i {
+    box-sizing: border-box;
+    font-size: 20px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Este border es para cuando se reduzca el sidebar, creo. */
+    border-radius: 8px;
+}
+
+.sidebar ul li #btnBuscar {
+    min-width: 50px;
+    position: absolute;
+    z-index: 99;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.sidebar ul li #btnBuscar:hover {
+    background: #fff;
+    color: rgb(41, 41, 41);
+}
+
+.sidebar ul li input {
+    width: 20px;
+    position: absolute;
+    height: 50px;
+    left: 0;
+    top: 0;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    background-color: rgb(54, 54, 54);
+    padding-left: 50px;
+    font-size: 14px;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.sidebar.active ul li input {
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    background-color: rgb(54, 54, 54);
+    padding-left: 55px;
+    font-size: 14px;
+    color: #fff;
+    transition: all 0.5s ease;
+}
+
+.sidebar ul li a {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    border-radius: 8px;
+    /* Esta propiedad sirve para gestionar el espacio en blanco de un elemento */
+    white-space: nowrap;
+    text-decoration: none;
+    color: rgb(235, 235, 235);
+}
+
+.sidebar ul li a:hover {
+    color: #11101d;
+    background-color: #fff;
+}
+
+.sidebar ul li a i {
+    height: 50px;
+    min-width: 50px;
+    border-radius: 8px;
+    line-height: 50px;
+}
+
+.sidebar ul li a .links_name {
+    opacity: 0;
+    transition: all 0.5s;
+    pointer-events: auto;
+}
+
+.sidebar.active ul li a .links_name {
+    opacity: 1;
+    box-sizing: border-box;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 5px;
+    text-align: center;
+}
+
+.sidebar .nav_list {
+    list-style: none;
+}
+
+.home_content {
+    /* Si quieres que el 100% de un height o width abarque toda la pantalla, el elemento debe ser absolute. */
+    position: absolute;
+    /* Aca se calcula el 100% del tamaño de la caja padre (body en este caso), ya que tiene un position absolute. */
+    height: 100%;
+    width: 180px;
+    left: 78px;
+    transition: all 0.5s;
+}
+
+.home_content .text {
+    font-size: 25px;
+    color: rgb(41, 41, 41);
+    margin: 12px;
+}
+
+.sidebar.active ~ .home_content {
+    width: 180px;
+    left: 240px;
+}
+
+/* Estilos para id's */
+
+#btnBuscar {}
+
+#btnMenu {
+    color: rgb(235, 235, 235);
+}
+
+#iconLogo {
+    color: rgb(235, 235, 235);
+}
+
+#nameLogo {
+    color: rgb(235, 235, 235);
+}
+
+#inputBuscar {}

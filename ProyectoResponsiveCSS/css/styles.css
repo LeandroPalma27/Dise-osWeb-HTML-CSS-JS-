@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans';
+}
+
+body {
+    background-color: rgb(37, 37, 37);
+}
+
+section {
+    height: 10vh;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+
+/* Uso correcto de descendencia */
+
+header .logo {
+    position: relative;
+    font-size: 22px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+header .toggle {
+    position: relative;
+    width: 35px;
+    height: 35px;
+    background-image: url(../img/menuLogo.png);
+    background-size: 28px;
+    filter: invert(100%);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    z-index: 1000;
+    transition: .5s;
+}
+
+header .toggle.active {
+    background-image: url(../img/menuClosed2.png);
+    background-size: 28px;
+    filter: invert(100%);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.nav {
+    position: absolute;
+    display: flex;
+    right: 100px;
+    height: 35px;
+    /* Esta seria otra manera de ocultar algo aparte del "display: none;" */
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+}
+
+.nav.active {
+    /* Con esto ya podriamos ver el nav */
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav li {
+    text-decoration: none;
+    list-style: none;
+}
+
+.nav li a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+    margin: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 35px;
+}
+
+.contenedor {
+    position: absolute;
+    width: 100%;
+    height: 590px;
+    display: flex;
+    padding: 20px 55px;
+    z-index: 100;
+}
+
+.contenedor .caja {
+    position: relative;
+    width: 340px;
+    height: 100%;
+    overflow: hidden;
+    border-right: 10px solid rgb(37, 37, 37);
+}
+
+.contenedor .caja:last-child {
+    width: 330px;
+    border-right: none;
+}
+
+.contenedor .caja .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+.contenedor .caja .img img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.contenedor .caja .img img:hover {
+    transform: scale(1.25);
+}
+
