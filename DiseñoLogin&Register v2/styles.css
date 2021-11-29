@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300&display=swap');
 
 * {
     box-sizing: border-box;
-    font-family: 'Dongle', sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -23,20 +21,32 @@ html, body {
 }
 
 .container-form {
-    width: 26%;
+    width: 23%;
+    height: 38%;
+    background: rgba(61, 61, 61, 0.199);
+    border-radius: 10px;
+    box-shadow: 9px 10px 24px 7px rgba(0, 0, 0, 0.62);
+    -webkit-box-shadow: 9px 10px 24px 7px rgba(0, 0, 0, 0.62);
+    -moz-box-shadow: 9px 10px 24px 7px rgba(0, 0, 0, 0.62);
+    transition: all 0.5;
+}
+
+.container-form.active {
+    width: 23%;
     height: 60%;
     background: rgba(61, 61, 61, 0.199);
     border-radius: 10px;
     box-shadow: 9px 10px 24px 7px rgba(0, 0, 0, 0.62);
     -webkit-box-shadow: 9px 10px 24px 7px rgba(0, 0, 0, 0.62);
     -moz-box-shadow: 9px 10px 24px 7px rgba(0, 0, 0, 0.62);
+    transition: all 0.5;
 }
 
 .form_login {
     width: 100%;
     height: 100%;
     z-index: 1;
-    font-size: 50px;
+    font-size: 40px;
     color: white;
     position: relative;
     top: 0;
@@ -48,7 +58,7 @@ html, body {
     width: 100%;
     height: 100%;
     z-index: 1;
-    font-size: 50px;
+    font-size: 40px;
     color: white;
     position: relative;
     top: 200%;
@@ -60,7 +70,7 @@ html, body {
     height: 100%;
     z-index: 100;
     position: relative;
-    font-size: 50px;
+    font-size: 40px;
     color: white;
     opacity: 0;
     bottom: -200%;
@@ -72,22 +82,210 @@ html, body {
     height: 100%;
     z-index: 100;
     position: relative;
-    font-size: 50px;
+    font-size: 40px;
     color: white;
     opacity: 1;
     bottom: 100%;
     transition: all 0.6s;
 }
 
+/* <===== Contenidos de login y register =====> */
+
+/* Body Login*/
+.form_container-title {
+    width: 100%;
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_container-inputs {
+    width: 100%;
+    height: 45%;
+}
+
+.form_container-buttons {
+    width: 100%;
+    height: 35%;
+}
+
+/* Body Register (active)*/
+
+.form_container-title.active {
+    width: 100%;
+    height: 18%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form_container-inputs.active {
+    width: 100%;
+    height: 57%;
+}
+
+.form_container-buttons.active {
+    width: 100%;
+    height: 25%;
+}
+
+.title {
+    margin: 0;
+    padding: 0;
+    font-size: 27px;
+    width: 100%;
+    height: auto;
+    padding: auto;
+    text-align: center;
+}
+
+.form_container-inputs .input-border {
+    border-bottom: 1px solid rgb(204, 204, 204);
+    margin: 0 20px;
+}
+
+.form_container-inputs .input-form {
+    display: flex;
+    width: 100%;
+    height: 48px;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 3px;
+    font-size: 14px;
+    padding-right: 8px;
+    color: rgb(223, 223, 223);
+    font-weight: bold;
+}
+
+.form_container-inputs .input-form.active {
+    display: flex;
+    width: 100%;
+    height: 41.5px;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 3px;
+    font-size: 14px;
+    padding-right: 8px;
+    color: rgb(223, 223, 223);
+    font-weight: bold;
+}
+
+.form_container-inputs input::placeholder {
+    font-weight: 400;
+}
+
 /* Botones para el cambio de login o registro: */
 
-.register-button, .login-button {
-    font-size: 25px;
+.form_container-buttons .button-login, .button-createUser {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-login .login {
+    width: 85%;
+    height: 35px;
+    line-height: 35px;
+    font-weight: bold;
+    font-size: 17px;
+    background-color: rgb(16, 129, 63);
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+}
+
+.button-login .login:hover {
+    width: 85%;
+    height: 35px;
+    line-height: 35px;
+    font-weight: bold;
+    font-size: 17px;
+    background-color: rgb(18, 185, 88);
+    color: #fff;
+}
+
+.button-createUser .createUser {
+    height: 35px;
+    width: 85%;
+    line-height: 35px;
+    font-weight: bold;
+    font-size: 17px;
+    background-color: rgb(16, 129, 63);
+    color: #fff;
+    transition: all 0.5s ease-in-out;
+}
+
+.button-createUser .createUser:hover {
+    width: 85%;
+    height: 35px;
+    line-height: 35px;
+    font-weight: bold;
+    font-size: 17px;
+    background-color: rgb(18, 185, 88);
+    color: #fff;
+}
+
+.button-createUser .goToCreateUser {
+    width: auto;
+    height: auto;
+    margin: auto;
+    margin-top: 6px;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.button-createUser .goToCreateUser:hover {
+    width: auto;
+    margin: auto;
+    height: auto;
+    color: rgb(26, 26, 26);
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 6px;
+    text-decoration: underline;
+}
+
+.button-login .goToLogin {
+    width: auto;
+    margin: auto;
+    height: auto;
+    color: rgb(255, 255, 255);
+    font-size: 14px;
+    margin-top: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.2s ease-in-out;
+}
+
+.button-login .goToLogin:hover {
+    width: auto;
+    margin: auto;
+    height: auto;
+    color: rgb(26, 26, 26);
+    font-size: 14px;
+    margin-top: 6px;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+.login, .createUser {
+    border: none;
+    border-radius: 20px;
+}
+
+.login, .createUser, .goToLogin, .goToCreateUser {
     cursor: pointer;
 }
 
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 768px) {
     .container-form {
         width: 75%;
         height: 60%;
